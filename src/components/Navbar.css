@@ -1,0 +1,38 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	padding: 2rem 3rem;
+	align-items: center;
+	height: 9rem;
+	background-color: #000000;
+	color: white;
+}
+
+.logo {
+	font-size: 3em;
+}
+
+.navbar > nav > ul {
+	display: flex;
+	gap: 5rem;
+	font-size: 2rem;
+	list-style-type: none;
+}
+
+.navbar a:visited,
+.navbar a:link {
+	text-decoration: none;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	transition: transform 250ms ease-in-out;
+	border-bottom: 2s solid pink;
+}
+
+a.link:hover {
+	display: inline-block;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
