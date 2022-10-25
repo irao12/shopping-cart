@@ -6,7 +6,7 @@ export default function Navbar() {
 	return (
 		<div className="navbar">
 			<Link to="/">
-				<h1 className="logo">Store</h1>
+				<h1 className="logo">PokePlush</h1>
 			</Link>
 			<nav>
 				<ul>
