@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 
 const Product = ({ name, img, price }) => {
+	const [quantity, setQuantity] = useState(0);
+
+	const handleChange = (e) => {
+		setQuantity(e.target.value);
+	};
+
+	const incrementQuantity = () => {
+		setQuantity((oldQuantity) => {
+			return ++oldQuantity;
+		});
+	};
+
+	const decrementQuantity = () => {
+		setQuantity((oldQuantity) =>
+			oldQuantity - 1 <= 0 ? 0 : oldQuantity - 1
+		);
+	};
+
 	return (
 		<div className="product">
 			<img src={img} alt={name} />
@@ -10,11 +28,24 @@ const Product = ({ name, img, price }) => {
 				<h3>${price}</h3>
 			</div>
 			<div className="quantity-selector">
-				<button type="button" className="decrement quantity-button">
+				<button
+					type="button"
+					className="decrement quantity-button"
+					onClick={decrementQuantity}
+				>
 					-
 				</button>
-				<input type="number" max={10}></input>
-				<button type="button" className="increment quantity-button">
+				<input
+					type="number"
+					max={10}
+					value={quantity}
+					onChange={handleChange}
+				></input>
+				<button
+					type="button"
+					className="increment quantity-button"
+					onClick={incrementQuantity}
+				>
 					+
 				</button>
 			</div>

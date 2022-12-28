@@ -50,6 +50,12 @@
 	text-align: center;
 	font-family: "Montserrat";
 	font-size: 2rem;
+	outline: none;
+}
+.quantity-selector input::-webkit-outer-spin-button,
+.quantity-selector input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 .quantity-button {
@@ -63,6 +69,7 @@
 	background-color: rgb(186, 23, 23);
 	color: white;
 	font-size: 2.5rem;
+	cursor: pointer;
 }
 
 .add-to-cart-button {
