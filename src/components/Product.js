@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import "./Product.css";
 
-const Product = ({ name, img, price }) => {
+const Product = ({ id, name, img, price }) => {
+	const cartContext = useContext(CartContext);
+
 	const [quantity, setQuantity] = useState(0);
 
 	const handleChange = (e) => {
@@ -49,7 +52,12 @@ const Product = ({ name, img, price }) => {
 					+
 				</button>
 			</div>
-			<button className="add-to-cart-button">ADD TO CART</button>
+			<button
+				className="add-to-cart-button"
+				onClick={() => cartContext.addToCart(id, quantity)}
+			>
+				ADD TO CART
+			</button>
 		</div>
 	);
 };

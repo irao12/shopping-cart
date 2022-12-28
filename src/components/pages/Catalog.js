@@ -10,6 +10,7 @@ export default function Catalog({ products }) {
 			<div className="product-list">
 				{products.map((product) => (
 					<Product
+						id={product.id}
 						name={product.name}
 						price={product.price}
 						img={product.img}

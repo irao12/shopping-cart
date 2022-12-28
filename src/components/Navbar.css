@@ -3,7 +3,7 @@
 	justify-content: space-between;
 	padding: 2rem 3rem;
 	align-items: center;
-	height: 9rem;
+	height: var(--navbar-height);
 	background-color: #000000;
 	color: white;
 }
@@ -22,6 +22,30 @@
 .navbar a:visited,
 .navbar a:link {
 	text-decoration: none;
+}
+
+.navbar-cart {
+	position: relative;
+	padding-right: 2rem;
+}
+
+li {
+	padding: 1.5rem 0 2.5rem 0;
+}
+
+.cart-number {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: flex;
+	font-size: 1.6rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	color: black;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border-radius: 50%;
 }
 
 a {
