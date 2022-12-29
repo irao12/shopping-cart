@@ -1,0 +1,30 @@
+.cart-page {
+	padding: 2rem;
+	display: flex;
+}
+
+.cart-content {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-heading {
+	text-align: center;
+	font-size: 4rem;
+	margin-bottom: 5rem;
+}
+
+.complete-order {
+	width: 90%;
+	height: 5.5rem;
+	flex-shrink: 0;
+	border: none;
+	border-radius: 2rem;
+	color: white;
+	background-color: rgb(186, 23, 23);
+	font-family: "Montserrat", sans-serif;
+	font-size: 2rem;
+	margin: auto;
+	cursor: pointer;
+}
