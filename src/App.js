@@ -7,6 +7,7 @@ import products from "./products";
 import { CartProvider } from "./context/CartContext";
 
 import "./App.css";
+import Cart from "./components/pages/Cart";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 							path="/catalog"
 							element={<Catalog products={products} />}
 						></Route>
+						<Route path="/cart" element={<Cart />}></Route>
 					</Route>
 				</Routes>
 			</CartProvider>

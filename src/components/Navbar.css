@@ -1,15 +1,17 @@
 .navbar {
-	display: flex;
-	justify-content: space-between;
-	padding: 2rem 3rem;
-	align-items: center;
+	width: 100%;
 	height: var(--navbar-height);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 1rem 3rem;
+	align-items: center;
 	background-color: #000000;
 	color: white;
 }
 
 .logo {
-	font-size: 3em;
+	font-size: 2.5em;
 }
 
 .navbar > nav > ul {
@@ -30,7 +32,7 @@
 }
 
 li {
-	padding: 1.5rem 0 2.5rem 0;
+	padding: 1.5rem 0 1.5rem 0;
 }
 
 .cart-number {
@@ -59,4 +61,13 @@ a.link:hover {
 	display: inline-block;
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
+}
+
+@media screen and (min-width: 60rem) {
+	.logo {
+		font-size: 3em;
+	}
+	.navbar {
+		flex-direction: row;
+	}
 }

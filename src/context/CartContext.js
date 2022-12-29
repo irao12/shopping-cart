@@ -29,11 +29,59 @@ const CartProvider = ({ children }) => {
 		}
 	};
 
+	const incrementQuantity = (id) => {
+		setCart((oldCart) => {
+			const newCart = [...oldCart];
+			for (let i = 0; i < newCart.length; i++) {
+				const item = newCart[i];
+				if (item.id === id) {
+					const newItem = { ...item };
+					newItem.quantity++;
+					setTotalQuantity(totalQuantity + 1);
+					newCart.splice(i, 1, newItem);
+					break;
+				}
+			}
+			return newCart;
+		});
+	};
+
+	const decrementQuantity = (id) => {
+		setCart((oldCart) => {
+			const newCart = [...oldCart];
+			for (let i = 0; i < newCart.length; i++) {
+				const item = newCart[i];
+				if (item.id === id && item.quantity - 1 >= 0) {
+					const newItem = { ...item };
+					newItem.quantity--;
+					setTotalQuantity(totalQuantity - 1);
+					newCart.splice(i, 1, newItem);
+					break;
+				}
+			}
+			return newCart;
+		});
+	};
+
+	const removeFromCart = (id) => {
+		const index = cart.findIndex((item) => item.id === id);
+		console.log(index);
+		setTotalQuantity(totalQuantity - cart[index].quantity);
+		setCart((oldCart) => {
+			const newCart = [...oldCart];
+			newCart.splice(index, 1);
+			return newCart;
+		});
+	};
+
 	return (
 		<Provider
 			value={{
 				cart,
 				addToCart,
+				incrementQuantity,
+				decrementQuantity,
+				removeFromCart,
 				totalQuantity,
 			}}
 		>
